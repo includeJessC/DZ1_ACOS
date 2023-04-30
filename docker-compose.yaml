@@ -1,0 +1,72 @@
+version: "3"
+services:
+  native:
+    image: annabogacheva/servimag
+    hostname: NATIVE
+    expose:
+      - 10000/udp
+    environment:
+      - HOST=NATIVE
+      - PORT=10000
+
+  xml:
+    image: annabogacheva/servimag
+    hostname: XML
+    expose:
+      - 10000/udp
+    environment:
+      - HOST=XML
+      - PORT=10000
+
+  json:
+    image: annabogacheva/servimag
+    hostname: JSON
+    expose:
+      - 10000/udp
+    environment:
+      - HOST=JSON
+      - PORT=10000
+
+  apache:
+    image: annabogacheva/servimag
+    hostname: APACHE
+    expose:
+      - 10000/udp
+    environment:
+      - HOST=APACHE
+      - PORT=10000
+
+  yaml:
+    image: annabogacheva/servimag
+    hostname: YAML
+    expose:
+      - 10000/udp
+    environment:
+      - HOST=YAML
+      - PORT=10000
+
+  msgpack:
+    image: annabogacheva/servimag
+    hostname: MSGPACK
+    expose:
+      - 10000/udp
+    environment:
+      - HOST=MSGPACK
+      - PORT=10000
+
+  client:
+    image: annabogacheva/clientimg
+    hostname: client
+    expose:
+      - 2000/udp
+    ports:
+      - "2000:2000/udp"
+    environment:
+      - PORT=10000
+    depends_on:
+      - native
+      - xml
+      - msgpack
+      - json
+      - apache
+      - yaml
