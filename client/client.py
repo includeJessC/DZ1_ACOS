@@ -12,7 +12,7 @@ class MyUDPHandler(socketserver.BaseRequestHandler):
         data = self.request[0].strip()
         sock = self.request[1]
         data = (data.decode()).split()
-        host = data[1].upper()
+        host = data[1].upper() + '78'
         port = int(os.environ['PORT'])
         with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as s:
             s.connect((host, port))

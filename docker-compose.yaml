@@ -2,57 +2,57 @@ version: "3"
 services:
   native:
     image: annabogacheva/servimag
-    hostname: NATIVE
+    hostname: NATIVE78
     expose:
-      - 10000/udp
+      - 9090/udp
     environment:
       - HOST=NATIVE
-      - PORT=10000
+      - PORT=9090
 
   xml:
     image: annabogacheva/servimag
-    hostname: XML
+    hostname: XML78
     expose:
-      - 10000/udp
+      - 9090/udp
     environment:
       - HOST=XML
-      - PORT=10000
+      - PORT=9090
 
   json:
     image: annabogacheva/servimag
-    hostname: JSON
+    hostname: JSON78
     expose:
-      - 10000/udp
+      - 9090/udp
     environment:
       - HOST=JSON
-      - PORT=10000
+      - PORT=9090
 
   apache:
     image: annabogacheva/servimag
-    hostname: APACHE
+    hostname: APACHE78
     expose:
-      - 10000/udp
+      - 9090/udp
     environment:
       - HOST=APACHE
-      - PORT=10000
+      - PORT=9090
 
   yaml:
     image: annabogacheva/servimag
-    hostname: YAML
+    hostname: YAML78
     expose:
-      - 10000/udp
+      - 9090/udp
     environment:
       - HOST=YAML
-      - PORT=10000
+      - PORT=9090
 
   msgpack:
     image: annabogacheva/servimag
-    hostname: MSGPACK
+    hostname: MSGPACK78
     expose:
-      - 10000/udp
+      - 9090/udp
     environment:
       - HOST=MSGPACK
-      - PORT=10000
+      - PORT=9090
 
   client:
     image: annabogacheva/clientimg
@@ -62,7 +62,7 @@ services:
     ports:
       - "2000:2000/udp"
     environment:
-      - PORT=10000
+      - PORT=9090
     depends_on:
       - native
       - xml
